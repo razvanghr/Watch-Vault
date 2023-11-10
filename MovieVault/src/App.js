@@ -2,6 +2,7 @@ import axios from "axios";
 import "./styles.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
+import MediaQuery from "react-responsive";
 
 // Pages
 import HomePage from "./pages/HomePage";
@@ -18,6 +19,7 @@ import ComingSoon from "./pages/ComingSoon";
 // Components
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import MobileNavigation from "./components/MobileNavigation";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -47,13 +49,26 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navigation
-          isLogged={isLogged}
-          setIsLogged={setIsLogged}
-          setUserData={setUserData}
-          searchData={searchData}
-          setSearchData={setSearchData}
-        />
+        <MediaQuery maxWidth={500}>
+          <MobileNavigation
+            isLogged={isLogged}
+            setIsLogged={setIsLogged}
+            setUserData={setUserData}
+            searchData={searchData}
+            setSearchData={setSearchData}
+          />
+        </MediaQuery>
+
+        <MediaQuery minWidth={501}>
+          <Navigation
+            isLogged={isLogged}
+            setIsLogged={setIsLogged}
+            setUserData={setUserData}
+            searchData={searchData}
+            setSearchData={setSearchData}
+          />
+        </MediaQuery>
+
         <Routes>
           <Route
             path="/"

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation, useNavigate, Link, redirect } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 import logoImage from "../assets/Images/logo-image.png";
