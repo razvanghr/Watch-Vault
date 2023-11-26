@@ -86,8 +86,6 @@ $grey-color: #ececec;
       .search-icon {
         font-size: 1.2rem;
         cursor: pointer;
-        :hover {
-        }
       }
 
       input {
@@ -806,10 +804,6 @@ form {
 }
 
 @media only screen and (max-width: 1120px) {
-  .navigation {
-    .navigation-left {
-    }
-  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -856,9 +850,6 @@ form {
 
     .navigation-right {
       width: 80%;
-
-      .navigation-search-bar {
-      }
     }
 
     .navigation-left {
@@ -908,6 +899,9 @@ form {
 }
 
 @media only screen and (max-width: 500px) {
+  .movie-list {
+    gap: 200px;
+  }
   .reveal-component {
     display: flex;
     color: $orange-color;
@@ -961,4 +955,18 @@ form {
 
 .menu-icon.active {
   transform: translateY(-25px);
+}
+
+.swiper {
+  width: 300px;
+}
+
+.swiper-slide a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper span {
+  background-color: #fe4a04;
 }

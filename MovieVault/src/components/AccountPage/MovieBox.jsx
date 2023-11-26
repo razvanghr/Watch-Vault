@@ -1,10 +1,11 @@
 import React from "react";
 
 import { useState } from "react";
-
+import MediaQuery from "react-responsive";
 import { motion } from "framer-motion";
 
 import Movie from "./Movie";
+import MovieSlider from "../MobileComponents/MovieSlider";
 
 function MovieBox({ movieType, title }) {
   const [showMovieList, setShowMovieList] = useState(false);
@@ -26,13 +27,24 @@ function MovieBox({ movieType, title }) {
       <div className="movies">
         {showMovieList && (
           <>
-            {movieType && movieType.length > 0 ? (
-              movieType.map((movie) => (
-                <Movie key={movie.movieId} movieData={movie} />
-              ))
-            ) : (
-              <p1 style={{ color: "white" }}>No movies in this section </p1>
-            )}
+            <MediaQuery minWidth={500}>
+              <>
+                {movieType && movieType.length > 0 ? (
+                  movieType.map((movie) => (
+                    <Movie key={movie.movieId} movieData={movie} />
+                  ))
+                ) : (
+                  <p1 style={{ color: "white" }}>No movies in this section </p1>
+                )}
+              </>
+            </MediaQuery>
+            <MediaQuery maxWidth={500}>
+              {movieType && movieType.length > 0 ? (
+                <MovieSlider data={movieType} />
+              ) : (
+                <p1 style={{ color: "white" }}>No movies in this section </p1>
+              )}
+            </MediaQuery>
           </>
         )}
       </div>
