@@ -59,18 +59,13 @@ function RegisterPage() {
           email: email,
         },
       });
-
-      navigate("/login");
-
-      console.log("Registration succesful");
+      setRegistrationStatus(res.data.message);
     } catch (error) {
       if (error.response && error.response.data) {
         setRegistrationStatus(error.response.data);
       } else {
         setRegistrationStatus("An error occurred");
       }
-
-      console.log(error);
     }
   };
 

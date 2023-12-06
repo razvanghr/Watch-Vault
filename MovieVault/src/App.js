@@ -1,6 +1,7 @@
 import axios from "axios";
 import "./styles.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 import MediaQuery from "react-responsive";
 
@@ -15,6 +16,7 @@ import ErrorPage from "./pages/ErrorPage";
 import SearchPage from "./pages/SearchPage";
 import UserPage from "./pages/UserPage";
 import ComingSoon from "./pages/ComingSoon";
+import EmailVerificationPage from "./pages/EmailVerificationPage";
 
 // Components
 import Navigation from "./components/Navigation";
@@ -77,6 +79,8 @@ function App() {
 
           <Route path="/register" element={<RegisterPage />}></Route>
 
+          <Route path="/*" element={<ErrorPage />} />
+
           <Route
             path="/login"
             element={
@@ -98,6 +102,11 @@ function App() {
           <Route path="/error404" element={<ErrorPage />}></Route>
 
           <Route path="/user/:userName" element={<UserPage />}></Route>
+
+          <Route
+            path="/email-verification"
+            element={<EmailVerificationPage />}
+          ></Route>
 
           <Route
             path="/search"

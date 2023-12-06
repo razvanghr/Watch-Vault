@@ -794,6 +794,33 @@ form {
   }
 }
 
+.email-verification-page {
+  height: 80vh;
+  width: 100%;
+  padding: 200px 100px 100px 100px;
+}
+
+.em-v-t {
+  color: #fe4a04;
+
+  p {
+    color: black;
+  }
+
+  a {
+    color: #fe4a04;
+    transition: 0.2s;
+    &:hover {
+      letter-spacing: 5px;
+    }
+  }
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
 // Responsive
 
 @media only screen and (max-width: 1250px) {
