@@ -3,6 +3,7 @@ import React from "react";
 import axios from "axios";
 
 import FormInput from "../components/Registration-Login/FormInput";
+import Spinner from "../components/Spinner";
 
 import { useNavigate } from "react-router-dom";
 import logoImage from "../assets/Images/logo-image.png";
@@ -17,6 +18,7 @@ function RegisterPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const [registrationStatus, setRegistrationStatus] = useState("");
 
@@ -34,6 +36,8 @@ function RegisterPage() {
 
   const sendRegistrationData = async (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     if (!email) {
       setRegistrationStatus("Please enter an email !");
@@ -66,6 +70,8 @@ function RegisterPage() {
       } else {
         setRegistrationStatus("An error occurred");
       }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -117,14 +123,19 @@ function RegisterPage() {
 
           {/* // ! Registration Details */}
 
-          <motion.button
-            onClick={sendRegistrationData}
-            className="form-button"
-            {...animationSettings}
-            transition={{ ...animationSettings.transition, delay: 0.8 }}
-          >
-            Register
-          </motion.button>
+          {!isLoading ? (
+            <motion.button
+              onClick={sendRegistrationData}
+              className="form-button"
+              {...animationSettings}
+              transition={{ ...animationSettings.transition, delay: 0.8 }}
+            >
+              Register
+            </motion.button>
+          ) : (
+            <Spinner />
+          )}
+
           <motion.p
             className="info-register"
             {...animationSettings}

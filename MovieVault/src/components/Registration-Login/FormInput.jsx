@@ -1,6 +1,8 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const animationSettings = {
   initial: { opacity: 0, scale: 0.5 },
@@ -13,6 +15,7 @@ const animationSettings = {
 };
 
 function FormInput({ setData, data, InputType, formDetails, delayTime }) {
+  const [show, setShow] = useState(InputType);
   return (
     <motion.div
       className="form-control"
@@ -25,6 +28,11 @@ function FormInput({ setData, data, InputType, formDetails, delayTime }) {
         value={data}
         onChange={(e) => setData(e.target.value)}
       />
+      {InputType == "Password" && (
+        <Link style={{ fontWeight: "400" }} to="/forgot-password">
+          forgot password?
+        </Link>
+      )}
     </motion.div>
   );
 }

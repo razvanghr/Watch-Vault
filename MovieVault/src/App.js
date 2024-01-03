@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import MediaQuery from "react-responsive";
 
 // Pages
+
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -17,6 +18,8 @@ import SearchPage from "./pages/SearchPage";
 import UserPage from "./pages/UserPage";
 import ComingSoon from "./pages/ComingSoon";
 import EmailVerificationPage from "./pages/EmailVerificationPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
+import ResetEmail from "./pages/ResetEmail";
 
 // Components
 import Navigation from "./components/Navigation";
@@ -81,6 +84,8 @@ function App() {
 
           <Route path="/*" element={<ErrorPage />} />
 
+          <Route path="/forgot-password" element={<ResetEmail />}></Route>
+
           <Route
             path="/login"
             element={
@@ -91,6 +96,8 @@ function App() {
               />
             }
           ></Route>
+
+          <Route path="/reset-password" element={<ResetPasswordPage />}></Route>
 
           <Route
             path="/account-info"

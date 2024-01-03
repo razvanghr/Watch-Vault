@@ -95,7 +95,7 @@ function LoginPage({ isLogged, setIsLogged, setUserData }) {
             <FormInput // ! Password
               setData={setPassword}
               data={password}
-              InputType={"password"}
+              InputType={"Password"}
               formDetails={"Password"}
               delayTime={0.6}
             />
