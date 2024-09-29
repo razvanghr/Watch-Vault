@@ -1,12 +1,25 @@
 import axios from "axios";
-
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import { useNavigate } from "react-router-dom";
+import { MovieType } from "../../types/MovieType";
 
-function MovieButton({ title, route, movieData, AuthToken, method }) {
+type MovieButtonProps = {
+  title: string;
+  route: string;
+  movieData: MovieType;
+  AuthToken: string;
+  method: string;
+};
+
+function MovieButton({
+  title,
+  route,
+  movieData,
+  AuthToken,
+  method,
+}: MovieButtonProps) {
   const navigate = useNavigate();
   const sendRequest = async () => {
     try {
@@ -16,11 +29,11 @@ function MovieButton({ title, route, movieData, AuthToken, method }) {
         headers: { Authorization: `Bearer ${AuthToken}` },
         data: {
           userId: localStorage.getItem("UserId"),
-          movieId: movieData.imdbID,
-          movieTitle: movieData.Title,
-          movieYear: movieData.Year,
-          movieType: movieData.Type,
-          moviePoster: movieData.Poster,
+          movieId: movieData.imdId,
+          movieTitle: movieData.title,
+          movieYear: movieData.year,
+          movieType: movieData.type,
+          moviePoster: movieData.poster,
         },
       });
       toast.success(res.data, {

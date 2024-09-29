@@ -2,15 +2,15 @@ import React from "react";
 
 import axios from "axios";
 
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { MovieType } from "../types/MovieType";
 import LoadingAnimation from "../components/LoadingAnimation";
 import MovieButton from "../components/MoviePageComp/MovieButton";
 import RemoveButton from "../components/MoviePageComp/RemoveButton";
 
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-
 function MoviePage() {
-  const [movieData, setMovieData] = useState(null);
+  const [movieData, setMovieData] = useState<MovieType | null>(null);
   const token = localStorage.getItem("JWTtoken");
   const { id } = useParams();
   const navigate = useNavigate();
@@ -47,15 +47,15 @@ function MoviePage() {
   return (
     <div className="movie-page">
       <div className="movie-image">
-        <img src={movieData.Poster} alt="Movie-Image" />
+        <img src={movieData.poster} alt="Movie-Image" />
       </div>
       <div className="movie-introduction ">
         <div className="movie-information">
-          <h1>{movieData.Title}</h1>
-          <p>{movieData.Year}</p>
-          <p>Type: {movieData.Type}</p>
-          <p>Genre: {movieData.Genre}</p>
-          <p>Rating: {movieData.imdbRating}</p>
+          <h1>{movieData.title}</h1>
+          <p>{movieData.year}</p>
+          <p>Type: {movieData.type}</p>
+          <p>Genre: {movieData.genre}</p>
+          <p>Rating: {movieData.imdRating}</p>
           <p></p>
         </div>
         <div className="movie-buttons">
@@ -109,10 +109,10 @@ function MoviePage() {
           </div>
         </div>
         <div className="movie-information inf-2">
-          <p id="#plot">Plot: {movieData.Plot}</p>
-          <p>Actors: {movieData.Actors}</p>
-          <p>Runtime: {movieData.Runtime}</p>
-          <p>Released: {movieData.Released}</p>
+          <p id="#plot">Plot: {movieData.plot}</p>
+          <p>Actors: {movieData.actors}</p>
+          <p>Runtime: {movieData.runtime}</p>
+          <p>Released: {movieData.released}</p>
           <p></p>
         </div>
       </div>
