@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-
 import FormInput from "../components/Registration-Login/FormInput";
 import Spinner from "../components/Spinner";
 
@@ -10,7 +9,7 @@ function ResetEmail() {
   const [status, setStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const sendEmailRequest = async (e) => {
+  const sendEmailRequest = async (e: React.MouseEvent<HTMLButtonElement>) => {
     try {
       e.preventDefault();
       if (!email) {

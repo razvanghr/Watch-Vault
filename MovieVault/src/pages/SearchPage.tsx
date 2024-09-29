@@ -1,14 +1,19 @@
 import React from "react";
+
+import { MovieType } from "../types/MovieType";
+import SearchMovie from "../components/SearchMovie";
 import LoadingAnimation from "../components/LoadingAnimation";
 
-import SearchMovie from "../components/SearchMovie";
+type SearchPageProps = {
+  searchData: string;
+};
 
-function SearchPage({ searchData }) {
+function SearchPage({ searchData }: SearchPageProps) {
   return (
     <div className="search-container">
       {searchData.Search ? (
         <div className="search-page">
-          {searchData.Search.map((movie) => {
+          {searchData.Search.map((movie: MovieType) => {
             return <SearchMovie movieData={movie} />;
           })}
         </div>

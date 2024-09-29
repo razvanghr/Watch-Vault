@@ -10,4 +10,5 @@ export type MovieType = {
   runtime: string;
   released: string;
   imdId: string;
+  movieId: number;
 };

@@ -53,7 +53,7 @@ function AccountFriends() {
       <div className="friends-link">
         {" "}
         {friendsData &&
-          friendsData.map((friend, index) => {
+          friendsData.map((friend: string, index: number) => {
             return (
               <Link key={index} to={`/user/${friend}`}>
                 <div key={index} className="friend-card">

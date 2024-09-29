@@ -1,8 +1,5 @@
 import React from "react";
 
-import Intro from "../components/HomePageComp/Intro";
-import Reveal from "../components/HomePageComp/Reveal";
-
 import { Link } from "react-router-dom";
 
 // Components
@@ -11,8 +8,14 @@ import revealImage1 from "../assets/Images/revealImage1.png";
 import revealImage2 from "../assets/Images/revealImage2.jpg";
 import revealImage3 from "../assets/Images/revealImage3.png";
 import revealImage4 from "../assets/Images/revealImage4.png";
+import Intro from "../components/HomePageComp/Intro";
+import Reveal from "../components/HomePageComp/Reveal";
 
-function HomePage({ isLogged }) {
+type HomePageProps = {
+  isLogged: boolean;
+};
+
+function HomePage({ isLogged }: HomePageProps) {
   return (
     <div className="home-container">
       <div className="home-page">

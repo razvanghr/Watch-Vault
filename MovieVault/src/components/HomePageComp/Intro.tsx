@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 
 import logoImage from "../../assets/Images/logo-image.png";
 
-function Intro({ isLogged }) {
+type IntroProps = {
+  isLogged: boolean;
+};
+
+function Intro({ isLogged }: IntroProps) {
   return (
     <motion.div className="home-introduction">
       <img src={logoImage} alt="" />

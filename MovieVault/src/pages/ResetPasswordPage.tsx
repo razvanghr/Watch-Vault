@@ -1,16 +1,16 @@
 import React from "react";
 
-import FormInput from "../components/Registration-Login/FormInput";
-import Spinner from "../components/Spinner";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import FormInput from "../components/Registration-Login/FormInput";
+import Spinner from "../components/Spinner";
 
 function ResetPasswordPage() {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [requestStatus, setRequestStatus] = useState("");
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState<string | null>("");
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -18,7 +18,9 @@ function ResetPasswordPage() {
     setToken(tokenFromUrl);
   }, []);
 
-  const sendResetPasswordRequest = async (e) => {
+  const sendResetPasswordRequest = async (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
     try {
       e.preventDefault();
 

@@ -8,13 +8,14 @@ import logoImageMobile from "../assets/Images/logo-mobile.png";
 
 import { useState } from "react";
 import axios from "axios";
+import { NaviagationProps } from "./Navigation";
 
 function MobileNavigation({
   isLogged,
   setIsLogged,
   setUserData,
   setSearchData,
-}) {
+}: NaviagationProps) {
   const location = useLocation();
   const navigate = useNavigate();
 

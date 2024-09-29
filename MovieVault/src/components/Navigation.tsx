@@ -6,9 +6,21 @@ import logoImage from "../assets/Images/logo-image.png";
 
 import { useState } from "react";
 
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
-function Navigation({ isLogged, setIsLogged, setUserData, setSearchData }) {
+export type NaviagationProps = {
+  isLogged: boolean;
+  setIsLogged: (state: boolean) => void;
+  setUserData: (user: {}) => void;
+  setSearchData: (res: AxiosResponse) => void;
+};
+
+function Navigation({
+  isLogged,
+  setIsLogged,
+  setUserData,
+  setSearchData,
+}: NaviagationProps) {
   const location = useLocation();
   const navigate = useNavigate();
 

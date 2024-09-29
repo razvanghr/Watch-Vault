@@ -3,12 +3,12 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
-import Movie from "../AccountPage/Movie";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Movie from "../AccountPage/Movie";
+import { MovieType } from "../../types/MovieType";
 function MovieSlider({ data }) {
   console.log(data);
   return (
@@ -18,7 +18,7 @@ function MovieSlider({ data }) {
       slidesPerView={1}
       pagination={{ clickable: true }}
     >
-      {data.map((movie) => {
+      {data.map((movie: MovieType) => {
         return (
           <SwiperSlide>
             <Movie key={movie.movieId} movieData={movie} />

@@ -2,9 +2,6 @@ import React from "react";
 
 import axios from "axios";
 
-import FormInput from "../components/Registration-Login/FormInput";
-import Spinner from "../components/Spinner";
-
 import { useNavigate } from "react-router-dom";
 import logoImage from "../assets/Images/logo-image.png";
 import { motion } from "framer-motion";
@@ -12,6 +9,8 @@ import { useState } from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
+import FormInput from "../components/Registration-Login/FormInput";
+import Spinner from "../components/Spinner";
 function RegisterPage() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,7 +33,9 @@ function RegisterPage() {
     },
   };
 
-  const sendRegistrationData = async (e) => {
+  const sendRegistrationData = async (
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
     e.preventDefault();
 
     setIsLoading(true);

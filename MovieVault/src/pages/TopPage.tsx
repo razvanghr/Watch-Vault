@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { MovieType } from "../types/MovieType";
 
 function TopPage() {
   const [movieData, setMovieData] = useState([]);
@@ -45,7 +46,9 @@ function TopPage() {
   return (
     <div>
       {Array.isArray(movieData) && movieData.length > 0 ? (
-        movieData.map((movie) => <p key={movie.info}>{movie.title}</p>)
+        movieData.map((movie: MovieType) => (
+          <p key={movie.plot}>{movie.title}</p>
+        ))
       ) : (
         <p>No movie data available</p>
       )}

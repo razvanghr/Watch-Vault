@@ -2,16 +2,16 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+import { useParams, useNavigate } from "react-router-dom";
+import { UserType } from "../types/UserType";
 import LoadingAnimation from "../components/LoadingAnimation";
 import MovieBox from "../components/AccountPage/MovieBox";
-
-import { useParams, useNavigate } from "react-router-dom";
 
 function UserPage() {
   const { userName } = useParams();
   const navigate = useNavigate();
 
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState<UserType | null>(null);
   const [isLoading, setIsLogged] = useState(true);
 
   const [isFollowing, setIsFollowing] = useState(null);
