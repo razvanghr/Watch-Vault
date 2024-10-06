@@ -1,0 +1,47 @@
+export const Padding = {
+  P0: "0px",
+  P2: "2px",
+  P4: "4px",
+  P6: "6px",
+  P8: "8px",
+  P10: "10px",
+  P12: "12px",
+  P14: "14px",
+  P16: "16px",
+  P18: "18px",
+  P20: "20px",
+  P22: "22px",
+  P24: "24px",
+};
+
+export const Margin = {
+  P0: "0px",
+  P2: "2px",
+  P4: "4px",
+  P6: "6px",
+  P8: "8px",
+  P10: "10px",
+  P12: "12px",
+  P14: "14px",
+  P16: "16px",
+  P18: "18px",
+  P20: "20px",
+  P22: "22px",
+  P24: "24px",
+};
+
+export const Radius = {
+  P0: "0px",
+  P2: "2px",
+  P4: "4px",
+  P6: "6px",
+  P8: "8px",
+  P10: "10px",
+  P12: "12px",
+  P14: "14px",
+  P16: "16px",
+  P18: "18px",
+  P20: "20px",
+  P22: "22px",
+  P24: "24px",
+};
